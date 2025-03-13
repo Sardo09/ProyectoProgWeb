@@ -59,8 +59,9 @@ body
     font-optical-sizing: auto;
     font-style: normal;
     font-variation-settings: "wdth" 100;
-    /*por si acaso background-image: url(/imagenes/cdobregon.jpg);*/
-    background-image: linear-gradient(to right, var(--blanco) 0% ,var(--primario)100%);
+    background-image: url(../imagenes/fondo.png);
+    background-size: cover;
+    /*background-image: linear-gradient(to right, var(--blanco) 0% ,var(--primario)100%);*/
     
 }
 
@@ -183,6 +184,7 @@ body
  o si le movieron a algo ponganle comentarios para que no exista problema
  con el trabajo de los 3*/
 
+/*CONTACTO.HTML*/
 /*Contactos y redes sociales*/
  .contacto
 {
@@ -359,5 +361,143 @@ body
 
 }
 
+/*INICIO.HTML*/
+/*banner*/
+.banner
+{
+    background-image:url(../imagenes/banner.jpg);
+    background-repeat:no-repeat ;
+    background-size: cover;
+    height: 410px;
+    padding: 20px;
+    position: relative;
+}
+
+.contenido-banner
+{
+    position: sticky;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 50, 50, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-banner h2
+{
+    color: var(--blanco);
+}
+
+/*Scroll snap*/
+.formInicio
+{
+    scroll-snap-stop: always;
+    scroll-snap-align: center;
+}
+
+/*Separador*/
+.separador
+{
+    border: none;
+    height: 1rem; 
+    background-image: linear-gradient(to right, var(--blanco) 0% ,var(--primario)100%);
+    margin-top: 6rem; 
+    margin-bottom: 1rem;
+}
+
+/*Los posts para la publicidad*/
+.flex-posts 
+{
+    display: flex;
+    flex-wrap: wrap
+}
+
+.flex-posts>div 
+{
+    padding: 2rem;
+    border-radius: 2rem;
+    margin: 1rem;
+    background-color: var(--grisAzul);
+}
+
+.flex-posts h2
+{
+    color: rgb(255, 255, 255); 
+    margin-top: auto;
+}
+
+.flex-posts p
+{ 
+    margin-top: auto;
+    text-align: center;
+}
+
+@media (min-width: 780px)
+{
+    .flex-posts
+    {
+        justify-content: center;
+    }
+    .flex-posts>div
+    {
+        width: 35%;
+    }
+}
+
+@media (max-width: 480px)
+{
+    .flex-posts
+    {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .flex-posts>div
+    {
+        width: 100%;
+    }
+}
 
 
+/*Los recuadros de la publicidad*/
+.post
+{
+    margin: 5px;
+    height: auto;
+    min-height: 14rem;
+    max-height: 50rem;
+}
+
+.post span
+{
+    font-size: 1.75rem;
+}
+
+.img-promo
+{
+    min-height: 50%;
+    width: 100%;
+    align: center;
+}
+
+.boton-promo
+{
+    background-color: var(--blanco);
+    color: var(--negro);
+    padding: 1rem 1rem;
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 100%;
+    text-align: center;
+    border: none;
+}
+
+.boton:hover
+{
+    cursor: pointer;
+}
