@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <!--styles.css-->
+    <link rel="preload" href="css\styles.css" as="style">
+    <link href="css\styles.css" rel="stylesheet">
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!--Logo-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=connecting_airports" />
+</head>
+<body>
+    <header>
+        <!--Kit para iconos de redes sociales-->
+        <script src="https://kit.fontawesome.com/a68e3d92d6.js" crossorigin="anonymous"></script>
+        <table class="log">
+            <tr>
+                <td style="width: 2%;"></td>
+                <td>
+                    <span class="material-symbols-outlined" style="font-size: 2.5rem;">
+                    connecting_airports
+                    </span>
+                </td>
+                <td><h1 class="logo">AeroSeguro</h1></td>
+                <td class="log"></td>
+                <td>
+                    <h2><a class="log" href="registro.html">Registro</a></h2>
+                </td>
+                <td style="width: 5%;"></td>
+            </tr>
+        </table>
+    </header>    
+
+    <div class="nav-bg">
+        <nav class="navegacion-principal contenedor">
+            <a href="inicio.html">Inicio</a>
+            <a href="quienesSomos.html">Quienes somos</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </div>
+    <br>
+    
+    <section class="search-container">
+        <div class="search-bar">
+          <label for="origen">Origen:</label>
+          <input type="text" id="origen" placeholder="Ciudad de origen">
+        </div>
+        <div class="search-bar">
+          <label for="destino">Destino:</label>
+          <input type="text" id="destino" placeholder="Ciudad de destino">
+        </div>
+        <div class="search-bar">
+          <label for="fecha">Fecha de salida:</label>
+          <input type="date" id="fecha">
+        </div>
+        <button type="submit" class="search-button">Buscar</button>
+      </section>
+    
+      <h2>Vuelos Disponibles</h2>
+
+      <section class="flight-list">
+        
+        <div class="flight-card">
+          
+          <h3>Vuelo 1: Madrid - Barcelona</h3>
+          <p><strong>Aerolínea:</strong> Iberia</p>
+          <p><strong>Fecha de salida:</strong> 20 de abril, 2025</p>
+          <p><strong>Precio:</strong> $120 USD</p>
+          <button class="book-button">Reservar Ahora</button>
+        </div>
+    
+        <div class="flight-card"
+            
+            >
+          <h3>Vuelo 2: México - Cancún</h3>
+          <p><strong>Aerolínea:</strong> Aeroméxico</p>
+          <p><strong>Fecha de salida:</strong> 22 de abril, 2025</p>
+          <p><strong>Precio:</strong> $150 USD</p>
+          <button class="book-button">Reservar Ahora</button>
+        </div>
+    
+        <div class="flight-card"
+        >
+          <h3>Vuelo 3: Buenos Aires - Río de Janeiro</h3>
+          <p><strong>Aerolínea:</strong> LATAM</p>
+          <p><strong>Fecha de salida:</strong> 25 de abril, 2025</p>
+          <p><strong>Precio:</strong> $200 USD</p>
+          <button class="book-button">Reservar Ahora</button>
+        </div>
+      </section>
+
+    <footer class="footer">
+        <p>AeroSeguro, todos los derechos reservados.
+        </p>
+        
+    </footer>
+</body>
+</html>
