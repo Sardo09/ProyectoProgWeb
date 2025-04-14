@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <!--styles.css-->
+    <link rel="preload" href="css\styles.css" as="style">
+    <link href="css\styles.css" rel="stylesheet">
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!--Logo-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=connecting_airports" />
+</head>
+<body>
+  <header>
+    <?php include 'base/header.php'; ?>
+  </header>    
+  <?php include 'base/barra.php'; ?>
+  <br>
+<main class="contenedor sombra">
+      <div class="flex-postis">
+        <div class="posti">
+          <!-- <img src="" alt="Quienes somos"> -->
+        <h2>Quienes somos</h2>
+        <p style="padding: 5%;">En Aeroseguro, nos especializamos en ofrecer a nuestros clientes 
+          una experiencia de viaje única, cómoda y accesible. Como una empresa líder en
+           la venta de boletos de avión, estamos comprometidos con facilitar la conexión
+            entre personas y destinos alrededor del mundo, garantizando precios competitivos
+             y un servicio de atención al cliente excepcional. Nos esforzamos por hacer
+             que cada vuelo sea más que solo un viaje, sino una experiencia que nuestros 
+             clientes disfruten desde el primer momento en que reservan hasta su llegada
+              a su destino.
+        </p>
+        </div>
+
+        <div class="posti">
+          <img src="imagenes/avionMision.webp" alt="Mision">
+          <h2>Mision</h2>
+          <p style="padding: 5%;">
+            Nuestra misión es proporcionar a nuestros clientes acceso fácil y rápido a
+             una amplia gama de opciones de vuelos, asegurando una experiencia de compra 
+             segura, confiable y amigable. Buscamos transformar la manera en que las personas 
+             planifican y disfrutan de sus viajes, ofreciendo una plataforma intuitiva que se
+              adapte a las necesidades de cada viajero.
+          </p>
+        </div>
+
+        <div class="posti">
+          <img src="imagenes/avionVision.webp" alt="Vision">
+          <h2>Visión</h2>
+          <p style="padding: 5%;">
+            Ser la plataforma líder en venta de boletos de avión, reconocida por la innovación, 
+            el compromiso con la calidad y el servicio excepcional al cliente. Queremos ser la 
+            primera opción para quienes buscan eficiencia, confianza y la mejor relación 
+            calidad-precio en sus viajes aéreos.
+          </p>
+        </div>
+
+        <div class="post">
+          <h2>Valores</h2>
+          <ol class="lista">
+            <li>
+              Compromiso con el cliente: Ponemos a nuestros clientes en el centro de todo lo 
+              que hacemos, asegurándonos de ofrecerles una experiencia que supere sus expectativas.
+            </li>
+
+            <li>
+              Transparencia: Garantizamos procesos claros, sin sorpresas ni cargos ocultos, para 
+              que nuestros clientes siempre sepan lo que están pagando.
+            </li>
+            
+            <li>
+              Innovación: Estamos en constante evolución para ofrecer soluciones tecnológicas que 
+              faciliten la compra de boletos y mejoren la experiencia de viaje.
+            </li>
+
+            <li>
+              Responsabilidad: Actuamos con integridad y ética, tanto en nuestros servicios como en 
+              nuestras relaciones con clientes, proveedores y empleados.
+            </li>
+
+            <li>
+              Accesibilidad: Trabajamos para que los vuelos sean accesibles para todos, brindando 
+              opciones para diferentes presupuestos y necesidades.
+            </li>
+          </ol>
+        </div>
+      </div> <!--end flex posts -->
+    </main>
+      
+    <hr class="separador">
+    
+    <?php include 'base/footer.php'; ?>
+</body>
+</html>
