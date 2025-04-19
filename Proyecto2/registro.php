@@ -1,3 +1,28 @@
+<?php
+include("base/conexion.php"); // Incluye el archivo de conexión a la base de datos
+include("base/funciones.php"); // Incluye el archivo de funciones
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $nombre = $_POST['nombre'];
+    $telefono = $_POST['telefono'];
+    $correo = $_POST['correo'];
+    $pass = $_POST['contraseña'];
+
+    // Verifica si el correo ya está registrado
+    $query = "SELECT * FROM usuario WHERE correo='$correo' LIMIT 1";
+    $result = mysqli_query($con, $query);
+    if($result && mysqli_num_rows($result) > 0){
+        echo "<script>alert('El correo ya está registrado');</script>";
+    }else{
+        // Se agrega el nuevo usuario a la base de datos
+        $query = "INSERT INTO usuario (nombre, telefono, correo, contraseña, tipoUsuario) VALUES ('$nombre', '$telefono', '$correo', '$pass', 0)";
+        $result = mysqli_query($con, $query);
+        echo "<script>alert('Se ha registrado exitosamente');</script>";
+        header("Location: login.php"); // Redirige a la página de inicio de sesión
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,37 +44,39 @@
     <br>
     <h2> Crea tu cuenta </h2>
     <section class="formCorreo">
-    <form action="procesar.php" method="POST" class="formCorreo">
+    <form method="POST" class="formCorreo">
         <fieldset>
             <div class="div-registro">
                <div class="camposRegistro">
                    <label>Nombre</label>
-                   <input class="input-text" type="text" placeholder="Tu Nombre">
+                   <input class="input-text" type="text" placeholder="Tu Nombre" id="nombre" name="nombre" required>
                </div>
 
                <div class="camposRegistro">
                    <label>Teléfono</label>
-                   <input class="input-text" type="tel" placeholder="Tu Teléfono">
+                   <input class="input-text" type="number" placeholder="Tu Teléfono" id="telefono" name="telefono" required>
                </div>
 
                <div class="camposRegistro">
                    <label>Correo</label>
-                   <input class="input-text" type="email" placeholder="Tu Email">
+                   <input class="input-text" type="email" placeholder="Tu Email" id="correo" name="correo" required>
                </div>
        
                <div class="camposRegistro">
                    <label>Contraseña</label>
-                   <input class="input-text" type="password" placeholder="Tu Contraseña">
+                   <input class="input-text" type="password" placeholder="Tu Contraseña" id="contraseña" name="contraseña" required>
                </div>
            </div>
 
            <div class="alinear-derecha flex">
                <input class="boton w-sm-100" type="submit" value="Crear Cuenta">
            </div>
+           <div class="alinear-derecha flex">
+                <p>¿Tienes cuenta? <a href="login.php">inicia sesión</a></p>
+            </div>
        </fieldset>
     </form>
     </section>
-    </main>
     <?php include 'base/footer.php'; ?>
 </body>
 </html>

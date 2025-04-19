@@ -1,3 +1,7 @@
+<?php
+include ("base/conexion.php"); // Incluye el archivo de conexión a la base de datos
+include ("base/funciones.php"); // Incluye el archivo de funciones
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,45 +53,35 @@
        </div> <!-- .flex-posts -->  
     </main>
     <hr class="separador">
-    <!--Promociones-->
+    <!--Los boletos-->
     <h2 style="color:white; font-size: 4rem;">¡Descubre nuestras promociones!</h2>
     <div class="flex-posts">
-        <div class="post">
-            <h2>Vuelos a Tamagandapio</h2>
-            <hr>
-            <img src="imagenes/tamagandapio-promo.png" class="img-promo">
-            <hr>
-            <p style="text-align: left; margin-bottom: 0; font-size: 0.8rem;">Precio ida y vuelta desde</p>
-            <p style="text-align: left; margin-top: 0;">MXN<span>$1,708</span></p>
-            <input class="boton-promo" type="submit" value="Revisar">
-        </div>
-        <div class="post">
-            <h2>Vuelos a Tamagandapio</h2>
-            <hr>
-            <img src="imagenes/tamagandapio-promo.png" class="img-promo">
-            <hr>
-            <p style="text-align: left; margin-bottom: 0; font-size: 0.8rem;">Precio ida y vuelta desde</p>
-            <p style="text-align: left; margin-top: 0;">MXN<span>$1,708</span></p>
-            <input class="boton-promo" type="submit" value="Revisar">
-        </div>
-        <div class="post">
-            <h2>Vuelos a Tamagandapio</h2>
-            <hr>
-            <img src="imagenes/tamagandapio-promo.png" class="img-promo">
-            <hr>
-            <p style="text-align: left; margin-bottom: 0; font-size: 0.8rem;">Precio ida y vuelta desde</p>
-            <p style="text-align: left; margin-top: 0;">MXN<span>$1,708</span></p>
-            <input class="boton-promo" type="submit" value="Revisar">
-        </div>
-        <div class="post">
-            <h2>Vuelos a Tamagandapio</h2>
-            <hr>
-            <img src="imagenes/tamagandapio-promo.png" class="img-promo">
-            <hr>
-            <p style="text-align: left; margin-bottom: 0; font-size: 0.8rem;">Precio ida y vuelta desde</p>
-            <p style="text-align: left; margin-top: 0;">MXN<span>$1,708</span></p>
-            <input class="boton-promo" type="submit" value="Revisar">
-        </div>
+        <!-- Aquí se muestran los primeros 4 resultados mas recientes-->
+        <?php
+            $query = "SELECT * FROM aviones ORDER BY idAvion DESC LIMIT 4";
+            $result = mysqli_query($con, $query);
+            if($result && mysqli_num_rows($result) > 0){
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $lugarViaje = $row['lugarViaje'];
+                    $descLugar = $row['descLugar'];
+                    $precio = $row['precio'];
+                    $numAsientos = $row['numAsientos'];
+                    $imagen = $row['imagen'];
+                    echo '<div class="post">';
+                    echo '<h2>Vuelos a '.$lugarViaje.'</h2>';
+                    echo '<hr>';
+                    if ($imagen != "") {
+                        echo '<img src="imagenes/'.$imagen.'" class="img-promo">';
+                        echo '<hr>';
+                    }
+                    echo '<p style="text-align: left; margin-bottom: 0; font-size: 0.8rem;">Precio ida y vuelta desde</p>';
+                    echo '<p style="text-align: left; margin-top: 0;">MXN<span>$'.$precio.'</span></p>';
+                    echo '<input class="boton-promo" type="submit" value="Revisar">';
+                    echo '</div>';
+
+                }
+            }
+        ?>
     </div> <!-- .flex-posts -->
     <?php include 'base/footer.php'; ?>
 </body>
