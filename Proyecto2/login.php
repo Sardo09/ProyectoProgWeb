@@ -13,7 +13,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if($result && mysqli_num_rows($result) > 0){
         $user_data = mysqli_fetch_assoc($result); // Obtiene los datos del usuario
         $_SESSION['idUsuario'] = $user_data['idUsuario']; // Guarda el nombre de usuario en la sesión
-        header("Location: inicio.php"); // Redirige a la página de inicio
+        $_SESSION['tipoUsuario'] = $user_data['tipoUsuario']; // Guarda el tipo de usuario en la sesión
+        if($user_data['tipoUsuario'] == 1) {
+            //si es admin, redirige a la página de inicioAdmin.php
+            header("Location: admin/inicioAdmin.php");
+        } else {
+            //si es usuario normal, redirige a la página de inicio.php
+            header("Location: inicio.php"); 
+        }
+        
     } else {
         echo "<script>alert('Correo o contraseña incorrectos');</script>";
     }

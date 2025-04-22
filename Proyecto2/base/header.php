@@ -22,7 +22,7 @@ session_start(); // Inicia la sesión
         <td class="log" style="width: 90%; text-align: right;">
             <?php //codigo para el inicio de sesion y cerrar sesion
             if (isset($_SESSION['idUsuario'])) { // Verifica si el usuario ha iniciado sesión
-                echo '<h2><a class="log" href="base/cerrarsesion.php">Cerrar Sesion</a></h2>';
+                echo '<h2><a class="log" href="../base/cerrarsesion.php">Cerrar Sesion</a></h2>';
             } else {
                 echo '<h2><a class="log" href="login.php">Iniciar Sesion</a></h2>';
             }
